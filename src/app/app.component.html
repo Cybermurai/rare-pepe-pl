@@ -1,12 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" class="ion-justify-content-between" style="display:flex;">
+          <ion-img src="./assets/logo.png" style="width:3rem"></ion-img>
+          <ion-buttons>
+            <ion-button>
+              <ion-icon name="notifications-outline"></ion-icon>
+            </ion-button>
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
+    <ion-menu contentId="main-content" type="overlay"   style="margin-top:50px;">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi@ionicframework.com</ion-note>
-
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+          <ion-list-header><ion-img src="./assets/feelsgoodman.webp" style="width:3.2rem;padding-right:1rem;"></ion-img> Rare Pepe</ion-list-header>
+          <ion-note>Interaktywna gra w memy</ion-note>
+          <ion-note>
+              Jak nie chcesz się tylko gapić na memy to stwórz swojego Pepe i zbuduj swoją piwnice marzeń.
+          </ion-note>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPagesGuest; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
@@ -14,14 +33,7 @@
           </ion-menu-toggle>
         </ion-list>
 
-        <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
 
-          <ion-item *ngFor="let label of labels" lines="none">
-            <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-            <ion-label>{{ label }}</ion-label>
-          </ion-item>
-        </ion-list>
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>

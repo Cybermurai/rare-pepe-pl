@@ -6,6 +6,8 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { addIcons } from 'ionicons';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,3 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+addIcons({
+  'feelsgood': './assets/feelsgoodman.webp'
+});
