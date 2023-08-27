@@ -20,3 +20,4 @@ export class AppModule {}
 addIcons({
   'feelsgood': './assets/feelsgoodman.webp'
 });
+

@@ -5,11 +5,17 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
+
 export class HomePage implements OnInit {
 
-  constructor() { }
+  public tempData = [
+    { title: 'Jeden', url: '/home/', icon: 'home' },
+    { title: 'Dwa', url: '/register/', icon: 'add' },
+    { title: 'Trzy', url: '/login/', icon: 'log-in' }
+  ];
 
-  ngOnInit() {
-  }
+  constructor() {}
+
+  ngOnInit() {}
 
 }
