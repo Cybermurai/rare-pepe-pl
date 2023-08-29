@@ -1,0 +1,18 @@
+.home{
+  &__item{
+    border:1px solid red;
+  }
+
+  &__meta{
+    border:1px solid green;
+  }
+
+  &__title{
+    border:1px solid blue;
+  }
+  
+  &__meme{
+    border:1px solid yellow;
+    min-height:16rem;
+  }
+}
