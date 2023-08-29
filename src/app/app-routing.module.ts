@@ -9,19 +9,19 @@ const routes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule)
+    loadChildren: () => import('./views/auth/auth.module').then( m => m.AuthPageModule)
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./views/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'auth/login',
-    loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./views/auth/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'auth/register',
-    loadChildren: () => import('./auth/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./views/auth/register/register.module').then( m => m.RegisterPageModule)
   }
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemsService } from '../../services/items.service';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +9,9 @@ import { Component, OnInit } from '@angular/core';
 
 export class HomePage implements OnInit {
 
-  public tempData = [
-    { title: 'Jeden', url: '/home/', icon: 'home' },
-    { title: 'Dwa', url: '/register/', icon: 'add' },
-    { title: 'Trzy', url: '/login/', icon: 'log-in' }
-  ];
+  constructor(private itemsData:ItemsService) {}
 
-  constructor() {}
+  items = this.itemsData.getItems();
 
   ngOnInit() {}
-
 }

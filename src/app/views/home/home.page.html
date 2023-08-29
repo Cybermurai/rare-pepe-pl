@@ -1,0 +1,23 @@
+<ion-content class="home" [fullscreen]="true" class="ion-padding">
+  <ion-grid>
+    <ion-row *ngFor="let data of items; let i = index">
+      <ion-col class="home__item">
+          <ion-row class="home__meta">
+            <ion-col size="12" class="home__title">
+              {{ data.title }}
+            </ion-col>
+            <ion-col class="home__author">
+              {{ data.user_id }}
+            </ion-col>
+            <ion-col class="home__stats">
+              {{ data.votes_plus }} | {{ data.votes_minus }}
+            </ion-col>
+          </ion-row>
+          <ion-row class="home__meme">
+            {{ data.img_id }}
+          </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
