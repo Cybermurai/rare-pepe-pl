@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ItemsService } from '../../services/items.service';
-
+import { UsersService } from '../../services/users.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -9,7 +9,8 @@ import { ItemsService } from '../../services/items.service';
 
 export class HomePage implements OnInit {
 
-  constructor(private itemsData:ItemsService) {}
+
+  constructor(private itemsData:ItemsService, public usersData:UsersService) {}
 
   items = this.itemsData.getItems();
 
