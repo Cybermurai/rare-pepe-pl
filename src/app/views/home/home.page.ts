@@ -12,7 +12,8 @@ export class HomePage implements OnInit {
 
   constructor(private itemsData:ItemsService, public usersData:UsersService) {}
 
-  items = this.itemsData.getItems();
+  items = this.itemsData.prepareItems();
+
 
   ngOnInit() {}
 }
