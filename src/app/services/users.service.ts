@@ -13,7 +13,7 @@ export class UsersService {
       rank: 1
     },
     {
-      id: 2222,
+      id: 56,
       username: 'Kepysztys',
       rank: 5
     },
@@ -23,13 +23,12 @@ export class UsersService {
     return this.tempUsersData;
   }
 
-  // getUser(id:number){
-  //   const result  = this.tempUsersData.filter((obj) => {
-  //     return obj.id === id;
-  //   });
-
-  //   return result[0];
-  // }
+  getUser(id:number){
+    const result  = this.tempUsersData.filter((obj) => {
+      return obj.id === id;
+    });
+    return result[0];
+  }
 
   constructor() { }
 }
