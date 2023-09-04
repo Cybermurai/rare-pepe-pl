@@ -10,12 +10,16 @@ export class UsersService {
     {
       id: 1234,
       username: 'Andrzeju2137',
-      rank: 1
+      level: 2137,
+      class: 'Papież Polak',
+      title: 'Habemus papam'
     },
     {
       id: 56,
       username: 'Kepysztys',
-      rank: 5
+      level: 222,
+      class: 3,
+      title: 4
     },
   ];
 
