@@ -39,42 +39,49 @@ export class ItemsService {
 
 
   getItems(){
+    //Podlaczyc sie do mongodb
+    // pobrac itemy
     return this.tempItemsData;
   }
 
-  prepareItems(){
+  prepareItems(count:number){
+    var preparedItems:any = [];
+    let cdnUrl = this.cdn;
+
     type PreparedItem = {
       title:string,
       user_id:number,
       user_data:any,
       image_data:any
-  };
+    };
 
-  var preparedItems:any = [];
-
-  let cdnUrl = this.cdn;
-  let userName = (id:number) => {
+  let userData = (id:number) => {
     const result  = this.usersService.tempUsersData.filter((obj) => {
       return obj.id === id;
     });
     return result[0];
   }
 
-  this.tempItemsData.forEach(function (value) {
+  this.getItems().forEach(function (value) {
+    if (count == preparedItems.length) return;
+
     const preparedItem: PreparedItem = {
       title: value.title,
       user_id: value.user_id,
       user_data: {
-        username: userName(value.user_id).username
+        username: userData(value.user_id).username,
+        level: userData(value.user_id).level,
+        class: userData(value.user_id).class,
+        title: userData(value.user_id).title
       },
       image_data: {
-        url: cdnUrl + value.img_id+ '.jpg'
+        url: cdnUrl + value.img_id + '.jpg'
       }
     };
     preparedItems.push(preparedItem);
   });
 
-  console.log(preparedItems);
+  console.log('result' + preparedItems);
   return preparedItems;
   }
 
