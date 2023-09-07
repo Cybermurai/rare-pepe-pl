@@ -1,7 +1,10 @@
 <ion-content class="home" [fullscreen]="true" class="ion-padding">
   <ion-grid>
-    <ion-row>
-      <ion-col class="home__item"  *ngFor="let data of items; let i = index">
+      <swiper-container
+      #swiper
+      (afterinit)="swiperReady()"
+      effect="coverflow">
+        <swiper-slide class="home__item"  *ngFor="let data of items; let i = index">
           <ion-row class="home__meta">
             <ion-col size="12" class="home__title">
               {{ data.title }}
@@ -19,8 +22,19 @@
           <ion-row class="home__meme">
             <img class="home__img" src="{{ data.image_data.url }}" alt="">
           </ion-row>
-      </ion-col>
-    </ion-row>
+        </swiper-slide>
+      </swiper-container>
+      <ion-buttons>
+        <ion-button (click)="goPrev()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+        <ion-button (click)="goNext()">
+          <ion-icon name="arrow-forward"></ion-icon>
+        </ion-button>
+      </ion-buttons>
   </ion-grid>
-  <div class="test">1212112</div>
+
+
+
+
 </ion-content>
